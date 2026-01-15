@@ -7,36 +7,40 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 20px;
-  padding: 20px 16px;
+  gap: clamp(16px, 3vw, 24px);
+  padding: clamp(16px, 4vw, 24px) clamp(14px, 5vw, 20px);
   position: relative;
 }
 
 /* Hero content */
 .hero-content {
   text-align: center;
+  width: 100%;
+  max-width: 500px;
 }
 
 /* Profile Image */
 .hero-img {
   border-radius: 50%;
-  width: 110px;
-  height: 110px;
+  width: clamp(80px, 20vw, 120px);
+  height: clamp(80px, 20vw, 120px);
   object-fit: cover;
-  margin-bottom: 12px;
+  margin-bottom: clamp(10px, 2vw, 16px);
+  flex-shrink: 0;
 }
 
 /* Name */
 .hero-title {
-  font-size: 2.5rem;
+  font-size: clamp(1.75rem, 8vw, 3rem);
   font-weight: 700;
-  margin: 10px 0;
+  margin: clamp(8px, 2vw, 12px) 0;
 }
 
 /* Subtitle */
 .hero-subtitle {
-  font-size: 1.1rem;
+  font-size: clamp(0.95rem, 3vw, 1.15rem);
   color: rgba(255, 255, 255, 0.75);
+  line-height: 1.5;
 }
 
 /* ---------- NAV (chips) ---------- */
@@ -44,28 +48,36 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 10px;
+  gap: clamp(10px, 2vw, 14px);
+  margin-top: clamp(8px, 1.5vw, 12px);
+  width: 100%;
+  max-width: 100%;
 }
 
 .chip {
   display: inline-flex;
   align-items: center;
-  height: 34px;
-  padding: 0 14px;
+  height: clamp(30px, 6vw, 36px);
+  padding: 0 clamp(12px, 2vw, 16px);
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.12);
   background: rgba(255, 255, 255, 0.06);
   color: #fff;
   text-decoration: none;
-  font-size: 13px;
+  font-size: clamp(12px, 2vw, 14px);
   font-weight: 500;
   transition: all 0.2s ease;
+  white-space: nowrap;
 }
 
 .chip:hover {
   background: rgba(255, 255, 255, 0.12);
   transform: translateY(-2px);
+}
+
+.chip:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 2px;
 }
 
 .chip.is-active {
@@ -75,13 +87,14 @@
 
 /* ---------- PROJECTS SECTION ---------- */
 .projects-section {
-  padding: 10px 16px;
-  max-width: 600px; /* ✅ keep */
+  padding: clamp(20px, 4vw, 40px) clamp(14px, 5vw, 20px);
+  max-width: 100%;
+  width: 100%;
   margin: 0 auto;
 
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: clamp(16px, 3vw, 24px);
 }
 
 .projects-heading {
@@ -94,37 +107,46 @@
   min-width: 0; /* ✅ prevents grid overflow */
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 20px;
-  padding: 16px;
+  border-radius: clamp(16px, 4vw, 20px);
+  padding: clamp(14px, 3vw, 20px);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55);
   backdrop-filter: blur(10px);
   box-sizing: border-box; /* ✅ safety */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7);
 }
 
 /* header */
 .card__header {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
-  gap: 12px;
-  padding: 4px 4px 12px;
+  gap: clamp(10px, 2vw, 16px);
+  padding: clamp(3px, 1vw, 6px) clamp(3px, 1vw, 6px) clamp(10px, 2vw, 14px);
+  flex-wrap: wrap;
 }
 
 .card__title {
-  font-size: 16px;
+  font-size: clamp(15px, 3vw, 18px);
   font-weight: 600;
   margin: 0;
+  flex-grow: 1;
 }
 
 .card__link {
-  font-size: 13px;
+  font-size: clamp(12px, 2vw, 14px);
   color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: clamp(6px, 1vw, 10px);
   white-space: nowrap;
   transition: 0.2s ease;
+  flex-shrink: 0;
 }
 
 .card__link:hover {
@@ -132,25 +154,33 @@
   transform: translateY(-1px);
 }
 
+.card__link:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
 .arrow {
-  font-size: 18px;
+  font-size: clamp(16px, 3vw, 20px);
   line-height: 1;
+  display: inline-block;
 }
 
 /* media */
 .card__media {
   width: 100%;
-  border-radius: 16px;
+  border-radius: clamp(12px, 3vw, 16px);
   overflow: hidden;
   position: relative;
+  aspect-ratio: 16 / 9;
 }
 
 .card__media--big {
-  height: 320px;
+  aspect-ratio: 16 / 9;
 }
 
 .card__media--small {
-  height: 180px;
+  aspect-ratio: 3 / 2;
 }
 
 /* image fits perfectly */
@@ -368,171 +398,56 @@
 footer {
   text-align: center;
   padding: 20px 16px;
-  background-color: #000;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
   margin-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* -----------------------------
-   RESPONSIVE
--------------------------------- */
-
-/* Tablet + down */
-@media (max-width: 768px) {
-  .hero-title {
-    font-size: 2.15rem;
-  }
-
-  .hero-subtitle {
-    font-size: 1.05rem;
-  }
-
-  .section-black {
-    padding: 64px 16px;
-  }
+/* ===== FIX MOBILE HORIZONTAL SCROLL ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-/* Mobile */
-@media (max-width: 640px) {
-  /* HERO */
-  .hero {
-    padding: 16px 14px;
-    gap: 16px;
-  }
-
-  .hero-img {
-    width: 92px;
-    height: 92px;
-  }
-
-  .hero-title {
-    font-size: 2rem;
-    margin: 8px 0;
-  }
-
-  .hero-subtitle {
-    font-size: 1rem;
-  }
-
-  /* Chips */
-  .ig-chips {
-    gap: 10px;
-    margin-top: 6px;
-  }
-
-  .chip {
-    height: 32px;
-    padding: 0 12px;
-    font-size: 12.5px;
-  }
-
-  /* Projects */
-  .projects-section {
-    padding: 20px 14px;
-    gap: 16px;
-  }
-
-  /* Cards */
-  .card {
-    padding: 14px;
-    border-radius: 18px;
-  }
-
-  /* Header stacks to avoid squeezing/overflow */
-  .card__header {
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 8px;
-    padding: 2px 2px 10px;
-  }
-
-  /* Keep link from pushing wider than the card */
-  .card__link {
-    max-width: 100%;
-  }
-
-  /* Media heights */
-  .card__media--big {
-    height: 240px;
-  }
-
-  .card__media--small {
-    height: 210px;
-  }
-
-  /* Two small cards -> one column */
-  .cards-row {
-    grid-template-columns: 1fr;
-    gap: 14px;
-  }
-
-  /* About */
-  .about-card {
-    padding: 14px;
-    border-radius: 16px;
-  }
-
-  .about-card__text,
-  .about-list {
-    font-size: 13.5px;
-  }
-
-  .about-tags {
-    gap: 8px;
-  }
-
-  .tag {
-    height: 28px;
-    padding: 0 10px;
-    font-size: 12px;
-  }
-
-  /* Ticker */
-  .pill-skill {
-    height: 32px;
-    padding: 0 12px;
-    font-size: 12.5px;
-  }
-
-  /* Contact */
-  .contact-card {
-    padding: 14px;
-    border-radius: 16px;
-  }
-
-  .contact-link {
-    padding: 11px 12px;
-    border-radius: 12px;
-  }
-
-  /* Sections */
-  .section-black {
-    padding: 56px 14px;
-  }
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
 }
 
-/* Extra-small phones */
-@media (max-width: 420px) {
-  .hero-title {
-    font-size: 1.75rem;
-  }
+.section-black,
+.section-wrap,
+.about-grid,
+.about-card,
+.contact-card,
+.ticker {
+  width: 100%;
+  max-width: 100%;
+}
 
-  .hero-subtitle {
-    font-size: 0.95rem;
-  }
+.section-wrap,
+.about-card,
+.contact-card,
+.cards-row > *,
+.card,
+.card__header > * {
+  min-width: 0;
+}
 
-  .chip {
-    height: 30px;
-    padding: 0 10px;
-    font-size: 12px;
-  }
+.ticker {
+  overflow: hidden;
+}
+.ticker__track {
+  will-change: transform;
+}
 
-  .card__media--big {
-    height: 210px;
-  }
+.about-card__text,
+.contact-text {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
 
-  .card__media--small {
-    height: 185px;
-  }
+.contact-link,
+.card__link {
+  min-width: 0;
 }
