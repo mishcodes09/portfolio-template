@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio Template</title>
+  <link rel="stylesheet" href="assets/css/global.css" />
+  <link rel="stylesheet" href="assets/css/layout.css" />
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="hero-content">
+      <img class="hero-img" src="assets/images/theo.jpg" alt="Theo James" />
+      <h1 class="hero-title">Theo James</h1>
+      <p class="hero-subtitle">A dedicated software engineer.</p>
+    </div>
+
+    <nav class="ig-chips" aria-label="Profile sections">
+      <a class="chip is-active" href="https://drive.google.com/file/d/FILE_ID/view?usp=sharing" target="_blank"
+        rel="noopener">
+        Resume
+      </a>
+
+      <a class="chip" href="#about">About me</a>
+      <a class="chip" href="#projects">Projects</a>
+      <a class="chip" href="#skills">Skills</a>
+      <a class="chip" href="#contact">Contact</a>
+    </nav>
+  </section>
+
+  <section class="projects-section" id="projects">
+    <div class="projects-heading">
+      <p class="subtitle">Case Studies</p>
+      <h1 class="title">Put case studies here.</h1>
+    </div>
+
+    <!-- BIG CARD -->
+    <article class="card card--big">
+      <header class="card__header">
+        <h2 class="card__title">Project 1</h2>
+        <a class="card__link" href="#" target="_blank" rel="noopener">
+          View More <span class="arrow">→</span>
+        </a>
+      </header>
+
+      <div class="card__media card__media--big">
+        <img class="card__img" src="assets/images/proj1.jpg" alt="Project preview" />
+      </div>
+    </article>
+
+    <!-- TWO SMALL CARDS -->
+    <div class="cards-row">
+      <article class="card card--small">
+        <header class="card__header">
+          <h2 class="card__title">Project 2</h2>
+          <a class="card__link" href="#" target="_blank" rel="noopener">
+            View <span class="arrow">→</span>
+          </a>
+        </header>
+
+        <div class="card__media card__media--small">
+          <img class="card__img" src="assets/images/proj1.jpg" alt="Project preview" />
+        </div>
+      </article>
+
+      <article class="card card--small">
+        <header class="card__header">
+          <h2 class="card__title">Project 3</h2>
+          <a class="card__link" href="#" target="_blank" rel="noopener">
+            View <span class="arrow">→</span>
+          </a>
+        </header>
+
+        <div class="card__media card__media--small">
+          <img class="card__img" src="assets/images/proj1.jpg" alt="Project preview" />
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section-black" id="about">
+    <div class="section-wrap">
+      <header class="section-head">
+        <p class="subtitle">About</p>
+        <h2 class="title">Building clean, modern UIs that feel effortless.</h2>
+      </header>
+
+      <div class="about-grid">
+        <div class="about-card">
+          <h3 class="about-card__title">What I do</h3>
+          <p class="about-card__text">
+            I build responsive, accessible interfaces with a strong focus on layout, typography,
+            and interaction details. I enjoy turning designs into scalable components and keeping
+            code clean and maintainable.
+          </p>
+        </div>
+
+        <div class="about-card">
+          <h3 class="about-card__title">How I work</h3>
+          <ul class="about-list">
+            <li>Mobile-first, responsive layouts</li>
+            <li>Reusable components and consistent spacing</li>
+            <li>Accessibility and keyboard-friendly UI</li>
+            <li>Performance-minded styling and assets</li>
+          </ul>
+        </div>
+
+        <div class="about-card about-card--wide">
+          <h3 class="about-card__title">Currently focused on</h3>
+          <p class="about-card__text">
+            Polished portfolio projects, UI systems, and case studies that show real problem
+            solving — from planning and layout to final implementation.
+          </p>
+
+          <div class="about-tags" aria-label="Focus areas">
+            <span class="tag">Frontend UI</span>
+            <span class="tag">Responsive Design</span>
+            <span class="tag">Accessibility</span>
+            <span class="tag">Component Design</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS (ticker) -->
+  <section class="section-black" id="skills">
+    <div class="section-wrap">
+      <header class="section-head">
+        <p class="subtitle">Skills</p>
+        <h2 class="title">Tools and technologies I use.</h2>
+      </header>
+
+      <div class="ticker" aria-label="Skills ticker">
+        <div class="ticker__track">
+          <!-- set 1 -->
+          <span class="pill-skill">HTML</span>
+          <span class="pill-skill">CSS</span>
+          <span class="pill-skill">JavaScript</span>
+          <span class="pill-skill">React</span>
+          <span class="pill-skill">Next.js</span>
+          <span class="pill-skill">TypeScript</span>
+          <span class="pill-skill">C#</span>
+          <span class="pill-skill">ASP.NET</span>
+          <span class="pill-skill">Git</span>
+          <span class="pill-skill">Figma</span>
+          <span class="pill-skill">Responsive UI</span>
+          <span class="pill-skill">Accessibility</span>
+
+          <!-- set 2 (duplicate for seamless loop) -->
+          <span class="pill-skill">HTML</span>
+          <span class="pill-skill">CSS</span>
+          <span class="pill-skill">JavaScript</span>
+          <span class="pill-skill">React</span>
+          <span class="pill-skill">Next.js</span>
+          <span class="pill-skill">TypeScript</span>
+          <span class="pill-skill">C#</span>
+          <span class="pill-skill">ASP.NET</span>
+          <span class="pill-skill">Git</span>
+          <span class="pill-skill">Figma</span>
+          <span class="pill-skill">Responsive UI</span>
+          <span class="pill-skill">Accessibility</span>
+        </div>
+      </div>
+
+      <p class="section-note">
+        I prioritize clean UI, consistent spacing, and component-based structure that scales.
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section-black" id="contact">
+    <div class="section-wrap">
+      <header class="section-head">
+        <p class="subtitle">Contact</p>
+        <h2 class="title">Let’s work together.</h2>
+      </header>
+
+      <div class="contact-card">
+
+        <div class="contact-links" role="list">
+          <!-- Replace the href values with your real links -->
+          <a class="contact-link" role="listitem" href="https://www.linkedin.com/" target="_blank" rel="noopener">
+            LinkedIn <span class="arrow">→</span>
+          </a>
+          <a class="contact-link" role="listitem" href="https://github.com/" target="_blank" rel="noopener">
+            GitHub <span class="arrow">→</span>
+          </a>
+          <a class="contact-link" role="listitem" href="mailto:you@example.com">
+            Email <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p class="footer-text">© 2026 Theo James. All rights reserved.</p>
+  </footer>
+</body>
+
+</html>
